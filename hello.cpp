@@ -10,6 +10,9 @@ using namespace std;
   
 int main()
 {
-   cout << "Hello!" << endl;
+   cout << "Hello, I'm Brian V.!" << endl;
+   cout << "I'm currently enrolled in engineering." << endl;
+   cout << "I'm currently a Precision Equiqment Calibration Technician." << endl;
+   
    return 0;
 }
