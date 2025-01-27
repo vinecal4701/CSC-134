@@ -9,7 +9,13 @@ using namespace std;
   
 int main()
 {
+//This program will calculate and print a bill receipt
 
+//this will calculate the price before tax
+
+//thi will calculate the amount of tax owed at 8%
+
+//this will print the total after taxes
 
 
      return 0;
