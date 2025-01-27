@@ -23,9 +23,11 @@ double grossed = 3.19;
   cout << " and grossed " << grossed << " million at the box office." << endl;
     
 // print brief summary of movie
-  cout << "We have ";
-  cout << " apples in stock." << endl;
-  cout << "Apples are currently $";
-  cout << "If you would like to buy our entire stock of apples the total price will be $" << endl;
+  cout << "Even though it has been 24 years since " << name << " was released in " << release;
+  cout << " and yet still this movie has created a booming fan base that still continues to grow." << endl;
+  cout << name << "is the first movie in a anthology. ";
+  cout << "The first one is about a preteen boy who finds out he is a wizard and ";
+  cout << "\"a famous one to boot\". He then attends a magical school for witches and wizards where he learns how to hone ";
+  cout << "his control over his magical abilities."
   return 0;
 }
