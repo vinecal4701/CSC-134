@@ -20,15 +20,15 @@ int apples = 400;
 // price per apple
 double pricePerApple = 1.45;
 
+// asks for the users name and how many apples they want
 string user_name;
 int apples_to_buy;
 
 
-// calculate the total price of the apples
-  double totalPrice = apples * pricePerApple;
+ 
 
 // Greet customer
-cout << "Good day! What is your name?";
+cout << "Good day! What is your name?" << endl;
 cin >> user_name;
 
 // print all the information about the orchard
@@ -38,13 +38,15 @@ cin >> user_name;
   cout << " apples in stock." << endl;
   cout << "Apples are currently $";
   cout << pricePerApple << " each." << endl;
-  cout << "If you would like to buy our entire stock of apples the total price will be $" << totalPrice << "." << endl;
-  cout << "Thank you for your bussiness, " << user_name << "!" << endl;
-
-  cout << "How many apples would you like to buy?";
+  
+  
+// calculate the total price of the apples they requested
+  cout << "How many apples would you like to buy?" << endl;
   cin >> apples_to_buy;
   double totalPrice = apples_to_buy * pricePerApple; 
-  cout << totalPrice
+  cout << "Your total is $" << totalPrice << endl;
+  cout << "Thank you for your bussiness, " << user_name << ". Have a great day!" << endl;
+  cout << endl;
 
   return 0;
 }
