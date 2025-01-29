@@ -19,13 +19,13 @@ cout << "The price is $" << price << endl;
 
 //this will calculate the amount of tax owed at 8%
 double tax = 0.08;
-cout << "The tax is " << tax << endl;
+cout << "The tax is 8%." << endl;
 double taxcalc = price * tax;
-cout << "The amount being added by the taxes is $" << setprecision(3) << taxcalc << endl;
+cout << "The amount being added by the taxes is $" << setprecision(2) << fixed << taxcalc << endl;
 
 //this will print the total after taxes
 double total = price + taxcalc;
-cout << "Your total is $" << setprecision(3) << total << endl;
+cout << "Your total is $" << total << endl;
 cout << endl;
 
      return 0;
