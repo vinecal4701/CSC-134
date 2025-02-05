@@ -1,0 +1,143 @@
+# print("I like turtles")
+# M2LAB2 - graphics
+# B. Vineyard
+# 2/5/2025
+# Goal: Learn some simple graphics tools
+
+
+from turtle import *
+
+screen = Screen()
+screen.bgcolor("black")
+
+t = Turtle()
+t.pencolor("green")
+
+'''t.fd(100) # forward
+t.right(90)
+# This is a loop
+for side in (1,2,3,4):
+    t.forward(100)
+    t.right(90)
+
+t.pencolor("white")
+t.left(90)
+t.fd(100)
+t.right(90)
+'''
+t.speed(100)
+
+t.penup()
+t.backward(400)
+t.pendown()
+t.pencolor("yellow") # start writing H
+t.left(90)
+t.fd(100)
+t.backward(50)
+t.left(90)
+t.fd(50)
+t.left(90)
+t.fd(50)
+t.backward(100)
+t.left(90)
+t.penup()
+
+t.fd(100)
+t.pendown() # start writing I
+t.right(90)
+t.fd(100)
+t.left(90)
+t.fd(20)
+t.backward(40)
+t.fd(20)
+t.left(90)
+t.fd(100)
+t.right(90)
+t.fd(20)
+t.backward(40)
+
+t.penup()
+t.fd(300)
+t.right(90)
+t.pendown()
+
+
+t.pencolor("green") # start cool S
+t.dot()
+t.fd(100)
+t.dot()
+t.left(45)
+t.fd(100)
+t.dot()
+t.right(45)
+t.fd(100)
+t.dot()
+t.right(45)
+t.fd(100)
+t.dot()
+t.right(90)
+t.fd(100)
+t.dot()
+t.right(45)
+t.fd(100)
+t.dot()
+t.pencolor("blue")
+t.right(45)
+t.fd(50)
+t.dot()
+t.pencolor("green")
+t.right(90)
+t.fd(50)
+t.dot()
+t.right(45)
+t.fd(100)
+t.dot()
+t.penup()
+t.backward(100)
+t.pendown()
+t.dot()
+t.left(45)
+t.backward(50)
+t.dot()
+t.left(90)
+t.left(90)
+t.fd(50)
+t.dot()
+t.right(45)
+t.fd(100)
+t.dot()
+t.right(45)
+t.fd(100)
+t.dot()
+t.right(90)
+t.fd(100)
+t.dot()
+t.right(45)
+t.fd(100)
+t.dot()
+t.pencolor("blue")
+t.right(45)
+t.fd(50)
+t.pencolor("green")
+t.dot()
+
+t.penup()
+t.pencolor("pink")
+t.left(135)
+t.fd(300)
+t.pendown()
+for side in (1,2,3,4,5,6,7,8):
+    t.right(45)
+    t.right(45)
+    t.right(45)
+    t.right(45)
+    t.right(45)
+    t.right(45)
+    t.right(45)
+    t.right(45)
+    t.right(45)
+    t.right(45)
+    t.right(45)
+    t.right(45)
+
+
