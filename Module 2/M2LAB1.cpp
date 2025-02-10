@@ -22,7 +22,6 @@ const double COST_PER_CUBIC_FOOT = 0.23;
 const double CHARGE_PER_CUBIC_FOOT = 0.5;
 
 // Variables
-double length, width, height, volume, cost, charge, profit;
 // The crate's height
 // The crate's length
 // The crate's width
@@ -30,13 +29,14 @@ double length, width, height, volume, cost, charge, profit;
 // The cost to build the crate
 // The customer charge for the crate
 // The profit made on the crate
+double length, width, height, volume, cost, charge, profit;
 
-// Set the desired output formatting for numbers.
+// Set the desired output formatting for all numbers.
 cout << setprecision(2) << fixed << showpoint;
 
 
 // Prompt the user for the crate's length, width, and height
-cout << "Enter the dimensions of the crate (in feet):\n";
+cout << "What are the dimensions of the crate you need made? (in feet):" << endl;
 cout << "Length: ";
 cin >> length;
 cout << "Width: ";
