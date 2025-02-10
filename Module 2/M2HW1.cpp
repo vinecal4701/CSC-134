@@ -18,7 +18,8 @@ string name_on_account = first_name + "" + last_name;
 double starting_account_balance, deposit_amount,
  withdrawl_amount, final_balance;
 int account_number
-int limitTo8Digits(int account_number);
+// figure out how to limit to 8 digits
+int account_number;
 
 cout << fixed << setprecision(2);
 cout << "What is the name on the account?" << endl;
