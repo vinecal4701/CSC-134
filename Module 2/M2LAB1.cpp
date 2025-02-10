@@ -1,7 +1,7 @@
 // CSC 134
 // M2LAB1
 // vinecal4701 (B. Vineyard)
-// 2/7/2025
+// 2/10/2025
 
 #include <iostream>
 #include <iomanip>
@@ -22,14 +22,14 @@ const double COST_PER_CUBIC_FOOT = 0.23;
 const double CHARGE_PER_CUBIC_FOOT = 0.5;
 
 // Variables
-// The crate's height
-// The crate's length
-// The crate's width
-// The volume of the crate
-// The cost to build the crate
-// The customer charge for the crate
-// The profit made on the crate
 double length, width, height, volume, cost, charge, profit;
+/* The crate's height
+ The crate's length
+ The crate's width
+ The volume of the crate
+ The cost to build the crate
+ The customer charge for the crate
+ The profit made on the crate */
 
 // Set the desired output formatting for all numbers.
 cout << setprecision(2) << fixed << showpoint;
@@ -44,18 +44,19 @@ cin >> width;
 cout << "Height: ";
 cin >> height;
 
-// Calculate the crate's volume, the cost to produce it,
-// the charge to the customer, and the profit.
+/* This will calculate the crate's volume, the cost to produce it,
+ the charge to the customer, and the profit.*/
 volume = length * width * height;
 cost = volume * COST_PER_CUBIC_FOOT;
 charge = volume * CHARGE_PER_CUBIC_FOOT;
 profit = charge - cost;
 
-// Display the calculated data.
+// This will display the calculated data.
 cout << "The volume of the crate is ";
-cout << volume << " cubic feet.\n";
-cout << "Cost to build: $" << cost << endl;
+cout << volume << " cubic feet." << endl;
+cout << "Cost to build:" << setw(7) << "$" << cost << endl;
 cout << "Charge to customer: $" << charge << endl;
-cout << "Profit: $" << profit << endl;
+cout << "Profit:" << setw(14) << "$" << profit << endl;
+
 return 0;
 }
