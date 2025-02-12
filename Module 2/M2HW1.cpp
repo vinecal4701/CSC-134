@@ -19,7 +19,7 @@ double starting_account_balance, deposit_amount,
  withdrawl_amount, final_balance;
 int account_number;
 // figure out how to limit to 8 digits
-
+srand()
 
 cout << fixed << setprecision(2);
 cout << "What is the name on the account?" << endl;
