@@ -17,14 +17,15 @@ string last_name = "";
 string name_on_account = first_name + "" + last_name;
 double starting_account_balance, deposit_amount,
  withdrawl_amount, final_balance;
-int account_number
-// figure out how to limit to 8 digits
 int account_number;
+// figure out how to limit to 8 digits
+
 
 cout << fixed << setprecision(2);
 cout << "What is the name on the account?" << endl;
 cin >> first_name;
 cin >> last_name;
+
 
 cout << "What is the starting account balance?\n";
 cin >> starting_account_balance;
@@ -38,6 +39,6 @@ cin >> withdrawl_amount;
 cout << name_on_account << endl;
 cout << account_number;
 final_balance = starting_account_balance + deposit_amount - withdrawl_amount;
-cout << final_balance
+cout << final_balance;
 return 0;
 }
