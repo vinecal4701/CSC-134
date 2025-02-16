@@ -51,7 +51,7 @@ string name_on_account = first_name + " " + last_name;
 cout << "The name on the account is: " << name_on_account << endl;
 cout << "Your account number is:     " << account_number << endl;
 final_balance = starting_account_balance + deposit_amount - withdrawl_amount;
-cout << "Your ending balance is:     " << final_balance << endl;
+cout << "Your ending balance is:     $" << final_balance << endl;
 cout << endl;
 
 //End question 1
