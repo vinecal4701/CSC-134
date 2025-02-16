@@ -185,6 +185,23 @@ cout << endl;
 cout << endl;
 cout << endl;
 
+string school, team, letsGo, cheerOne, cheerTwo;
+school = "FTCC";
+team = "Trojans";
+letsGo = "Let's go";
+cheerOne = letsGo + " " + school;
+cheerTwo = letsGo + " " + team;
+
+cout << cheerOne << endl;
+cout << cheerOne << endl;
+cout << cheerOne << endl;
+cout << cheerTwo << endl;
+
+cout << endl;
+cout << endl;
+cout << "----------------------------------------------------------------------------------------------" << endl;
+
+// End Question 4
 
 return 0;
 }
