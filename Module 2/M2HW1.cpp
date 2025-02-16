@@ -1,7 +1,7 @@
 // CSC 134
 // M2HW1 - Gold + Bonus
-// vinecal4701 (Brian V.)
-// 2/10/2025
+// vinecal4701 (B. Vineyard)
+// 2/16/2025
 
 #include <iostream>
 #include <iomanip>
