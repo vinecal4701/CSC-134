@@ -1,7 +1,7 @@
 // CSC 134
 // M3T1 and M3T2
 // vinecal4701 (B. Vineyard)
-//  2/17/2025
+// 2/17/2025
 
 #include <iostream>
 #include <iomanip>
