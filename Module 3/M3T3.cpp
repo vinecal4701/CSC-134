@@ -34,7 +34,7 @@ cout << "Your total is: " << total << endl;
 
 //Let's play Craps!
 // 7 and 12 -> win
-// 2 and 12 -> lose
+// 2, 3 and 12 -> lose
 // anything else -- comes later
 if (total == 7) {
     cout << "Lucky seven! You win!" << endl;
