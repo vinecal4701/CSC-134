@@ -39,6 +39,8 @@ int main()
     else {
         cout << "I'm sorry, that is not a valid choice." << endl;
     }
+    
+    
     if ( 1 == choice) {
         cout << "Which option will you choose to use in the Fight?" << endl;
         cout << "1-Enchanted Bow of Fire, 2-Sword of Soul Steal, 3-Spell of instant freeze?" << endl;
