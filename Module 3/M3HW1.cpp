@@ -28,6 +28,8 @@ int main()
     cout << "Please type a number between 1 and 4: ";
     cin >> choice;
 
+    /*This section is causing some kind of crash but not showing the errors
+    
     if (1 == choice){
         question_1();
     }
@@ -42,8 +44,10 @@ int main()
     }
     else {
         cout << "I'm sorry that is not a valid choice." << endl;
-        if ()
-    }
+        if (choice <= 1 && choice >= 4) {
+            main();
+        }
+    }*/
 
 
 
