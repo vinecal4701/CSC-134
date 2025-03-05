@@ -28,10 +28,12 @@ int main()
     cout << "Please type a number between 1 and 4: ";
     cin >> choice;
 
-    /*This section is causing some kind of crash but not showing the errors
-    
-    if (1 == choice){
-        question_1();
+    //This section will cause some kind of crash but not showing the errors
+      // if the void() functions don't have at least an empty curlly braced part below the end of the int main() to try an call on.
+
+    while (choice <= 1 && choice >= 4){
+        if (1 == choice){
+            question_1();
     }
     else if (2 == choice){
         question_2();
@@ -42,12 +44,12 @@ int main()
     else if (4 == choice){
         question_4();
     }
-    else {
+    else if (choice < 1 && choice > 4){
         cout << "I'm sorry that is not a valid choice." << endl;
-        if (choice <= 1 && choice >= 4) {
-            main();
-        }
-    }*/
+        cout << main();
+    }
+    
+    }
 
 
 
@@ -59,4 +61,24 @@ cout << endl;
 cout << endl;
 
 return 0;
+}
+
+
+void question_1(){
+cout << "Question 1 goes here" << endl;
+}
+
+
+void question_2(){
+    cout << "Question 2 goes here" << endl;
+}
+
+
+void question_3(){
+    cout << "Question 3 goes here" << endl;
+}
+
+
+void question_4(){
+    cout << "Question 4 goes here" << endl;
 }
