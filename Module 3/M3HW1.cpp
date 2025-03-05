@@ -80,6 +80,7 @@ else if ("yes" != choice or "no" != choice){
     cout << "If you aren't sure that is ok." << endl;
     cout << endl;
 }
+//end question 1
 }
 
 
@@ -121,6 +122,7 @@ double total = price + taxcalc;
 cout << "Your total is " << setw(4) << "$"  << total << endl;
 cout << endl;
 }
+//end question 2
 }
 
 
