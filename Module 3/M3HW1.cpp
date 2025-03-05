@@ -21,19 +21,20 @@ int main()
 
     // this program will ask a question and respond to it with
     // the program for the given question.
+    bool keep_going = true;
+    while (true == keep_going){
 
     int choice;
 
     cout << "What question's program would you like to run?" << endl;
-    cout << "Please type a number between 1 and 4: ";
+    cout << "Please type a number between 1 and 4 or type 0 at this line to exit: \n";
     cin >> choice;
 
     //This section will cause some kind of crash but not showing the errors
       // if the void() functions don't have at least an empty curlly braced part below the end of the int main() to try an call on.
 
-    while (choice <= 1 && choice >= 4){
-        if (1 == choice){
-            question_1();
+    if (1 == choice){
+        question_1();
     }
     else if (2 == choice){
         question_2();
@@ -44,28 +45,41 @@ int main()
     else if (4 == choice){
         question_4();
     }
-    else if (choice < 1 && choice > 4){
+    else if (0 == choice){
+        cout << "Goodbye!" << endl;
+        cout << endl;
+        cout << endl;
+        return 0;
+    }
+    else if (choice != 0,1,2,3,4){
         cout << "I'm sorry that is not a valid choice." << endl;
-        cout << main();
+        cout << endl;
     }
     
     }
-
-
-
-
-
-
-cout << endl;
-cout << endl;
-cout << endl;
 
 return 0;
 }
 
 
 void question_1(){
-cout << "Question 1 goes here" << endl;
+    string choice;
+
+cout << "Hello, I'm Chatbot B! Do you like anime?" << endl;
+cin >> choice;
+
+if ("yes" == choice){
+    cout << "That's awesome! I do too!" << endl;
+    cout << endl;
+}
+else if ("no" == choice){
+    cout << "Well, maybe you haven't found the one for you yet." << endl;
+    cout << endl;
+}
+else if ("yes" != choice or "no" != choice){
+    cout << "If you aren't sure that is ok." << endl;
+    cout << endl;
+}
 }
 
 
