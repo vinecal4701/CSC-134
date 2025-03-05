@@ -3,7 +3,8 @@
         "cmath": "cpp",
         "iostream": "cpp",
         "ostream": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "string": "cpp"
     },
     "workbench.colorTheme": "green theme"
 }
