@@ -144,14 +144,12 @@ cout << endl;
 
 // Function for Question 3
 void question_3(){
-    bool keep_going = true;
-    while (true == keep_going){  
-            
+                
     int choice;
     string game_over ("Thank you for playing!");
 
     cout << "Welcome to my simple choose your own adventure game!" << endl;
-    cout << "We begin with your character standing at the mouth of a great cave. Please choose between choice [1] (enter the cave) or choice [2] (walk away to begin). You may also choose [0] to end the program." << endl;
+    cout << "We begin with your character standing at the mouth of a great cave. Please choose between choice [1] (enter the cave) or choice [2] (walk away to begin)." << endl;
     cin >> choice;
 
 
@@ -208,20 +206,12 @@ void question_3(){
         cout << endl;
         cout << endl;
     }
-    else if (0 == choice){
-        cout << "Goodbye!" << endl;
-        cout << endl;
-        cout << endl;
-        return 0;
-    }
-    else if ( 0,1,2 != choice) {
+    else if ( 1,2 != choice) {
         cout << "That is and invalid choice. please try again." << endl;
         cout << endl;
         cout << endl;
         cout << endl;
     }
-}
-return 0;
 }
 // end question 3
 
@@ -232,6 +222,34 @@ return 0;
 
 // Function for Question 4
 void question_4(){
-    cout << "Question 4 goes here" << endl;
+    
+cout << "Let's perform some simple addition!" << endl;
+const int OFFSET = 5;
+
+int seed = time(0);
+// seed the random number generator using time from the system
+srand(seed);
+
+// rand () is large number so we take the remainder which is %
+int first_number, second_number, sum, answer;
+first_number = (rand() % OFFSET) + 1;
+second_number = (rand() % OFFSET) + 1;
+sum = first_number + second_number;
+
+cout << "What does: " << first_number << " + " << second_number << " =" << endl;
+cin >> answer;
+
+
+if (answer == sum) {
+    cout << "That is correct!" << endl;
+}
+else if (answer != sum) {
+    cout << "I'm sorry, " << answer << " is not the correct answer. The correct answer is " << sum << "." << endl;
+}
+
+
+cout << endl;
+cout << endl;
+cout << endl;
 }
 // end question 4
