@@ -4,7 +4,8 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "iomanip": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "ctime": "cpp"
     },
     "workbench.colorTheme": "green theme"
 }
