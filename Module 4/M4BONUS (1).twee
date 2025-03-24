@@ -1,0 +1,113 @@
+:: StoryTitle
+M4BONUS
+
+
+:: StoryData
+{
+  "ifid": "E5CAEF94-0B52-4501-9DE2-2BD0464C4335",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start",
+  "zoom": 1
+}
+
+
+:: Aproach the bar {"position":"575,400","size":"100,100"}
+You approach the bar and order a drink. While you are nursing your drink you over hear some of the conversation coming from the loud arguement in the corner. They seem to be arguing about who they want their third member of the party to be and where they would ever find (if:$class is "Wizard")[a Wizard] (if:$class is "Warrior")[a Warrior] (if:$class is "Elf Archer")[an Elf Archer] in this part of the world.
+[[Decision]]
+
+
+:: Attack {"position":"1300,200","size":"100,100"}
+(if:$class is "Wizard")[You attempt to attack the troll using your magical Fireball.] 
+(if:$class is "Warrior")[You attempt to attack the troll using your enchanted great sword.] 
+(if:$class is "Elf Archer")[You attempt to attack the troll using your flaming arrows.] 
+(if:$class is "Wizard")[You attempt to fight the Troll but your magical attacks seem to be having no affect. You are forced to flee. [[Flee]] ] 
+(if:$class is "Warrior")[You attempt to fight the Troll but your magical attacks seem to be having no affect. You are forced to flee. [[Flee]] ] 
+(if:$class is "Elf Archer")[You attempt to fight the Troll but your magical attacks seem to be having no affect. You are forced to flee. [[Flee]] ] 
+
+
+:: Decision {"position":"725,525","size":"100,100"}
+Do you choose to apporach, apologize for ease dropping and annouce that you are (if:$class is "Wizard")[a Wizard] (if:$class is "Warrior")[a Warrior] (if:$class is "Elf Archer")[an Elf Archer] and are in need a party to travel with toward the village and beyond. [[Polite introduction]](set: $introduction to "Rude")
+
+OR
+
+Do you choose to approach and rudely interrupt their argument and announce that you are (if:$class is "Wizard")[a Wizard] (if:$class is "Warrior")[a Warrior] (if:$class is "Elf Archer")[an Elf Archer] and are in need a party to travel with toward the village and beyond. [[Rude introduction]](set: $introduction to "Rude")
+
+
+:: Elf Archer {"position":"325,175","size":"100,100"}
+You become an agile, cunning, and deadly Elf Archer.
+(set: $class to "Elf Archer")
+<img src="https://as2.ftcdn.net/v2/jpg/11/63/67/83/1000_F_1163678373_JVJ0sesdDtMN8aImu1s6U1PdaVrbR4W0.jpg" width="400">
+[[Start Adventure]]
+
+
+:: Flee {"position":"1150,200","size":"100,100"}
+You manage to flee back to the tavern and enter it to lose the Troll.
+[[Go in Tavern]]
+
+
+
+:: Go in Tavern {"position":"725,275","size":"100,100"}
+You enter the tavern and are greeted by loud arguing in the back left corner and a low murmur throughout the rest of the tavern. Do you approach the bar or investigate the arguement in the corner?
+[[Aproach the bar]]
+[[Investigate the arguement]]
+
+
+:: Investigate the arguement {"position":"875,400","size":"100,100"}
+You approach the corner. As you approach you over hear some of the conversation coming. They seem to be arguing about who they want their third member of the party to be and where they would ever find (if:$class is "Wizard")[a Wizard] (if:$class is "Warrior")[a Warrior] (if:$class is "Elf Archer")[an Elf Archer] in this part of the world.
+[[Decision]]
+
+
+:: Polite introduction {"position":"900,625","size":"100,100"}
+
+
+
+:: Rude introduction {"position":"575,625","size":"100,100"}
+
+
+
+:: Select Character {"position":"125,200","size":"100,100"}
+Choose a character:
+
+[[Wizard]]
+[[Warrior]]
+[[Elf Archer]]
+
+
+:: Start {"position":"125,50","size":"100,100"}
+[[Select Character]]
+
+
+
+
+:: Start Adventure {"position":"950,75","size":"100,100"}
+You begin your adventure outside a weathered tavern overgrown by vines. Do you choose to go in or to travel down the road to a nearby village?
+<img src="https://as1.ftcdn.net/v2/jpg/10/82/66/98/1000_F_1082669863_NaDDyxwqWlOSX2WqxjAc1bOuUvSLpGn3.jpg" width="400">
+[[Go in Tavern]]
+[[Travel down the road to the village]]
+
+
+
+
+
+:: Travel down the road to the village {"position":"1200,75","size":"100,100"}
+You travel down the road toward the nearby village. Part way there you are attacked by a large Troll. Do you attack, dodge, or attempt to flee?
+<img src="https://as1.ftcdn.net/v2/jpg/09/89/19/80/1000_F_989198052_Pb4zvKoc4fbjd5j8IJ7T6lDN6XpAWkmG.jpg" width="400">
+[[Attack]]
+[[Flee]]
+
+
+
+:: Warrior {"position":"275,350","size":"100,100"}
+You become a strong battle hardened Warrior.
+(set: $class to "Warrior")
+<img src="https://as2.ftcdn.net/v2/jpg/07/17/96/13/1000_F_717961360_aQ0z7olU9dyxmeJis3hEmXclWzoSEvUd.jpg" width="400">
+[[Start Adventure]]
+
+
+:: Wizard {"position":"225,525","size":"100,100"}
+You become a powerful Wizard
+(set: $class to "Wizard")
+<img src="https://as1.ftcdn.net/v2/jpg/04/88/49/50/1000_F_488495072_qw53n2jWvKGarj3P2YAUi2smwk9aERFN.jpg" width="400">
+[[Start Adventure]]
+
