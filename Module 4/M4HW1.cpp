@@ -14,8 +14,7 @@ using namespace std;
 
 void show_message();
 void product_of_a_number_routine(); // does everything but the math
-int square_a_number( int number_sq); // does the math
-
+int product_calc( int number1, int number 2); // does the math
 
 int main(){
    // cout << "Hello from main()" << endl;
@@ -25,15 +24,11 @@ int main(){
     bool is_valid = false;
     while (is_valid == false){
     int choice;
-    cout << "Pick 1 or 2";
-    cout << endl;
+    show_message();
     cin >> choice;
-    if (choice == 1){
-        cout << "You picked 1" << endl;
-        is_valid = true;
-    }
-    else if ( choice == 2){
-        cout << "You picked 2" << endl;
+    if (choice >= 1 && choice <= 12){
+        cout << choice;
+        //product_of_a_number_routine(choice);
         is_valid = true;
     }
     else {
@@ -52,30 +47,31 @@ int main(){
 
     // Define functions here, including full body {}
     void show_message(){
-        cout << "   This is a" << endl;
+        cout << "Hello! This program will calculate and display the product table of a number." << endl;
+        cout << "You may choose any number between 1 and 12." << endl;
     }
 
 
-    void square_a_number_routine(){
-        int sq;
+    void product_of_a_number_routine(){
+        int answer;
         const int MIN_NUM = 1;
-        const int MAX_NUM = 10;
-        cout << "Table of Squares" << endl;
+        const int MAX_NUM = 60;
+        cout << "Table of Products" << endl;
         cout << "--------------------" << endl;
         int num = MIN_NUM;
         while (num <= MAX_NUM){
-            sq = square_a_number(num);
-            cout << num << "\t" << sq << endl;
+            answer = product_calc(num);
+            cout << "choice" << "*" << num << "= " << answer << endl;
             /* "\t" adds a space by "hitting" tab.
             Can be repeated back to back as long as data doesn't spill over to next line*/
             num = num + 1;
         }
     }
 
-    int square_a_number( int number_sq) {
+    int product_calc( int number1, int number2 ) {
         int answer;
         //cout << "doing the math for " << number_sq << " ... " ;
-        answer = number_sq * number_sq;
+        answer = number1 * number2;
         return answer;
     }
 
