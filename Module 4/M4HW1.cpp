@@ -14,7 +14,8 @@ using namespace std;
 
 void show_message();
 void product_of_a_number_routine(); // does everything but the math
-int product_calc( int number1, int number 2); // does the math
+int choice_routine(int choice);
+int product_calc( int number1, int number2); // does the math
 
 int main(){
    // cout << "Hello from main()" << endl;
@@ -26,6 +27,8 @@ int main(){
     int choice;
     show_message();
     cin >> choice;
+    int selection = choice;
+    choice_routine(selection);
     if (choice >= 1 && choice <= 12){
         cout << choice;
         //product_of_a_number_routine(choice);
@@ -52,6 +55,13 @@ int main(){
     }
 
 
+    int choice_routine(int choice){
+        int selection;
+        cin >> selection;
+return selection;
+    }
+
+
     void product_of_a_number_routine(){
         int answer;
         const int MIN_NUM = 1;
@@ -60,8 +70,8 @@ int main(){
         cout << "--------------------" << endl;
         int num = MIN_NUM;
         while (num <= MAX_NUM){
-            answer = product_calc(num);
-            cout << "choice" << "*" << num << "= " << answer << endl;
+            answer = product_calc();
+            cout << choice_routine() << "*" << num << "= " << answer << endl;
             /* "\t" adds a space by "hitting" tab.
             Can be repeated back to back as long as data doesn't spill over to next line*/
             num = num + 1;
