@@ -21,17 +21,17 @@ int main(){
    // cout << "Hello from main()" << endl;
     //show_message(); //call the function
     //square_a_number_routine();
-    
+    cout << "Hello! This program will calculate and display the product table of a number." << endl;
     bool is_valid = false;
     while (is_valid == false){
     int choice;
-    show_message();
+    //show_message();
     cin >> choice;
     int selection = choice;
-    choice_routine(selection);
+    //choice_routine(selection);
     if (choice >= 1 && choice <= 12){
         cout << choice;
-        //product_of_a_number_routine(choice);
+        product_of_a_number_routine(choice);
         is_valid = true;
     }
     else {
@@ -47,10 +47,9 @@ int main(){
     cout << endl;
     return 0;
     }
-
+/*
     // Define functions here, including full body {}
     void show_message(){
-        cout << "Hello! This program will calculate and display the product table of a number." << endl;
         cout << "You may choose any number between 1 and 12." << endl;
     }
 
@@ -74,7 +73,7 @@ return selection;
             cout << choice_routine() << "*" << num << "= " << answer << endl;
             /* "\t" adds a space by "hitting" tab.
             Can be repeated back to back as long as data doesn't spill over to next line*/
-            num = num + 1;
+           /* num = num + 1;
         }
     }
 
@@ -86,4 +85,4 @@ return selection;
     }
 
 
-    
+    */
