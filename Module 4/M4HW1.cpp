@@ -1,5 +1,5 @@
 // CSC 134
-// M5T2
+// M4HW1- Gold
 // vinecal4701 (B. Vineyard)
 // 03/26/2025
 
@@ -35,13 +35,19 @@ int main(){
         //cout << choice;
         choice_routine(selection);
         product_of_a_number_routine();
-        is_valid = true;
-    }
-    else {
-        cout << "Sorry, not valid. Try again." << endl;
+        cout << endl;
         show_message();
     }
-    cout << "Goodbye" << endl;
+    else if (choice != 0 || choice < 0 || choice > 12){
+        cout << "Sorry, not valid. Try again." << endl;
+        cout << endl;
+        show_message();
+    }
+    else if (choice == 0){
+        cout << "Goodbye!" << endl;
+        is_valid = true;
+    }
+    
     }
 
 
@@ -76,16 +82,13 @@ int main(){
         int num = MIN_NUM;
         while (num <= MAX_NUM){
             int answer = product_calc(selection,num);
-            cout << choice_routine(choice) << "*" << num << "= " << answer << endl;
-            /* "\t" adds a space by "hitting" tab.
-            Can be repeated back to back as long as data doesn't spill over to next line*/
-           num = num + 1;
+            cout << choice_routine(choice) << " times " << num << " is " << answer << endl;
+            num++;
         }
     }
 
     int product_calc( int number1, int number2 ) {
         int answer;
-        //cout << "doing the math for " << number_sq << " ... " ;
         answer = number1 * number2;
         return answer;
     }
