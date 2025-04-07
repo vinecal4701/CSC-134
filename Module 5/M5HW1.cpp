@@ -77,7 +77,33 @@ void main_menu() {
 
 
 void question1(){
-    cout << "fill" << endl;
+    string month1 = "";
+    string month2 = "";
+    string month3 = "";
+    double rainfall1 = 0;
+    double rainfall2 = 0;
+    double rainfall3 = 0;
+    double average_rainfall;
+
+
+    cout << "This program will display the average rainfall in inches for";
+    cout << "the three months you provide." << endl;
+    cout << "What is your first month?" << endl;
+    cin >> month1;
+    cout << "What is the rainfall in inches for that month?" << endl;
+    cin >> rainfall1;
+    cout << "What is your second month?" << endl;
+    cin >> month2;
+    cout << "What is the rainfall in inches for that month?" << endl;
+    cin >> rainfall2;
+    cout << "What is your third month?" << endl;
+    cin >> month3;
+    cout << "What is the rainfall in inches for that month?" << endl;
+    cin >> rainfall3;
+    average_rainfall = (rainfall1 + rainfall2 + rainfall3) / 3.0;
+    cout << "The average rainfall for " << month1 << ", " << month2 << ", " << month3;
+    cout << " is " << setprecision(3) << average_rainfall << " inches." << endl;
+
     cout << endl;
     main_menu();
 }
