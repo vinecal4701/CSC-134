@@ -6,7 +6,8 @@
         "iomanip": "cpp",
         "string": "cpp",
         "ctime": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "string_view": "cpp"
     },
     "workbench.colorTheme": "green theme"
 }
