@@ -1,7 +1,7 @@
 // CSC 134
-// M5HW1
+// M5HW1 - Gold
 // vinecal4701 (B. Vineyard)
-// 4/xx/2025
+// 4/13/2025
 
 
 #include <iostream>
@@ -236,7 +236,7 @@ void question4(){
       area = 3.14159 * (pow(circle_radius, 2));
       cout << "The area of your circle is " << area << endl;
       cout << endl;
-      main_menu();
+      question4();
   } 
   else if (2 == choice) {
     cout << "Please enter the length and width of the Rectangle." << endl;
@@ -253,11 +253,24 @@ void question4(){
       area = rectangle_length * rectangle_width;
       cout << "The area of your rectangle is " << area << endl;
       cout << endl;
-          main_menu();
+      question4();
   } 
   else if (3 == choice) {
-    cout << "fill" << endl;
-    main_menu();
+    cout << "Please enter the length of your triangle's base and the height of the Triangle." << endl;
+    do{
+      cout << "Length of base:" << endl;
+      cin >> triangle_base;
+      cout << "Height:" << endl;
+      cin >> triangle_height;
+       if(triangle_base <= 0 && triangle_height <= 0){
+        cout << "The length and/or height cannot be less than or equal to zero." << endl;
+        cin.ignore(); // clear the user input
+        }
+      }while(triangle_base <= 0 && triangle_height <= 0);
+      area = (triangle_base * triangle_height) * 0.5;
+      cout << "The area of your triangle is " << area << endl;
+      cout << endl;
+      question4();
   } 
   else if (4 == choice) {
       cout << "Quitting." << endl;
@@ -270,12 +283,48 @@ void question4(){
     cin.ignore(); // clear the user input
   }
   }while(choice != 4);
-    cout << endl;
-    main_menu();
+    //cout << endl;
+   // main_menu();
 }
 
 void question5(){
-    cout << "fill" << endl;
-    cout << endl;
+    double speed, hours, distance;
+    cout << setprecision(2) << fixed << showpoint;
+    do{
+    cout << "This program will calculate the distance traveled and";
+    cout << " in how many hours based upon your input.";
+    cout << " Entering [-5] will exit and return to the main menu." << endl;
+    cout << "What is the speed of your vehicle in mph?" << endl;
+    do{
+      cin >> speed;
+    if(speed == -5){
+      main_menu();
+     } 
+    else if(speed < 0){
+      cout << "Invalid input. Speed may not be less than 0. Please try again." << endl;
+      cin.ignore();
+     }
+    }while(speed <0);
+
+    do{
+      cout << "How many hours has it traveled?" << endl;
+    cin >> hours;
+    if(hours == -5){
+      main_menu();
+     } 
+    else if(hours < 1){
+      cout << "Invalid input. Hours may not be less than 1. Please try again." << endl;
+      cin.ignore();
+     } 
+    }while(hours < 1);
+
+     cout << "Hour \tDistance Traveled" << endl;
+     cout << "---------------------------------------------" << endl;
+      for(double t = 1; t <= hours; t++){
+        distance = speed * t;
+        cout << setw(2) << t << setw(15) << distance << endl;
+      }
+    }while(speed != -5 || hours != -5);
+
     main_menu();
 }
