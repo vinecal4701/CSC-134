@@ -42,7 +42,9 @@ int main()
     //load mag
     mag.push_back(BLACK);
     mag.push_back(RED);
-    int num_shells = 2;
+    mag.push_back(BLACK);
+    mag.push_back(RED);
+    int num_shells = mag.size();
     // look at shell before you eject it
     int current_shell = mag.at(num_shells-1);
     cout << "Next shell: " << current_shell << endl;
