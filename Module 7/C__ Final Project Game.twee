@@ -1,0 +1,326 @@
+:: StoryTitle
+C++ Final Project Game
+
+
+:: StoryData
+{
+  "ifid": "E5CAEF94-0B52-4501-9DE2-2BD0464C4335",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start",
+  "zoom": 1
+}
+
+
+:: Aproach the bar {"position":"575,400","size":"100,100"}
+You approach the bar and order a drink. While you are nursing your drink you over hear some of the conversation coming from the loud arguement in the corner. They seem to be arguing about who they want their third member of the party to be and where they would ever find (if:$class is "Wizard")[a Wizard] (else-if:$class is "Warrior")[a Warrior] (else-if:$class is "Elf Archer")[an Elf Archer]<!--(else:)[Undefined]--> in this part of the world.
+[[Decision]]
+
+
+:: Attack {"position":"1300,200","size":"100,100"}
+{(if:$class is "Wizard")[You attempt to attack the troll using your magical Fireball.] 
+(if:$class is "Warrior")[You attempt to attack the troll using your enchanted great sword.] 
+(if:$class is "Elf Archer")[You attempt to attack the troll using your flaming arrows.] }
+{(if:$class is "Wizard")[You attempt to fight the Troll but your magical attacks seem to be having no affect. You are forced to flee. [[Flee]] ] 
+(if:$class is "Warrior")[You attempt to fight the Troll but your strikes seem to be having no affect. You are forced to flee. [[Flee]] ] 
+(if:$class is "Elf Archer")[You attempt to fight the Troll but your arrows seem to be having no affect. You are forced to flee. [[Flee]] ]}
+
+
+:: Attempt to Barter {"position":"1375,75","size":"100,100"}
+You attempt to barter with the troll in an attempt to convince it to let you pass.(if: $class is "Warrior")[You look into your bag and find three objects. Which object do you use to barter?
+[[Look in Bag]] ](if: $class is "Wizard")[You look into your bag and find three objects. Which object do you use to barter?
+[[Look in Bag]] ](if: $class is "Elf Archer")[You look into your bag and find three objects. Which object do you use to barter?
+[[Look in Bag]] ]
+
+
+:: Attempt to dispel magic {"position":"1100,1075","size":"100,100"}
+\:: Attempt to dispel magic
+(if: $class is "Wizard")[
+    You channel your arcane energy and unravel the enchantment. The mist clears in a flash.
+    [[Search the area]]
+](else:)[
+    You try, but the spell resists you.
+    [[Retreat to the group]]
+]
+
+
+
+:: Battle the shadows {"position":"1350,1325","size":"100,100"}
+\:: Battle the shadows
+The shadow creatures leap from the trees.
+(if: $class is "Warrior")[
+    You cleave through the darkness with raw power.
+](else-if: $class is "Wizard")[
+    You cast searing light, burning the creatures from within.
+](else-if: $class is "Elf Archer")[
+    You shoot faster than the eye can follow, dropping several before they reach you.
+]
+[[Search the area]]
+
+
+
+:: Carved Wooden Figure {"position":"1675,125","size":"100,100"}
+{(set: $haveWoodFigure to false)}You choose to offer your Carved Wooden Figure up for barter. This enrages the troll and it smashes you into the ground with one fell blow.
+
+Thank you for playing!
+
+
+:: Decision {"position":"725,525","size":"100,100"}
+Do you choose to apporach, apologize for ease dropping and annouce that you are (if:$class is "Wizard")[a Wizard] (if:$class is "Warrior")[a Warrior] (if:$class is "Elf Archer")[an Elf Archer] and are in need a party to travel with toward the village and beyond. [[Polite introduction]](set: $politeintroduction to true)
+
+OR
+
+Do you choose to approach and rudely interrupt their argument and announce that you are (if:$class is "Wizard")[a Wizard] (if:$class is "Warrior")[a Warrior] (if:$class is "Elf Archer")[an Elf Archer] and are in need a party to travel with toward the village and beyond. [[Rude introduction]](set: $rudeintroduction to true)
+
+
+:: Elf Archer {"position":"325,175","size":"100,100"}
+You become an agile, cunning, and deadly Elf Archer.
+{(set: $class to "Elf Archer")
+(set: $Health to 100)
+(set: $Strength to 50)
+(set: $Agility to 300)
+(set: $Cunning to 200)}
+Class is $class
+Health is $Health
+Strength is $Strength
+Agility is $Agility
+
+Starting Inventory:
+{(set: $haveGoldBag to true)}Bag of Gold
+{(set: $haveSilverTiara to true)}Silver Tiara
+{(set: $haveWoodFigure to true)}Carved wooden figure
+{<!--
+(if:$Strength > 30)[You can lift the boulder.]
+(else:)[You could not lift the boulder.]
+-->}
+<img src="https://as2.ftcdn.net/v2/jpg/11/63/67/83/1000_F_1163678373_JVJ0sesdDtMN8aImu1s6U1PdaVrbR4W0.jpg" width="400">
+[[Start Adventure]]
+
+
+:: Flee {"position":"1150,200","size":"100,100"}
+(if: $class is "Wizard" )[You manage to flee back to the tavern and enter it to lose the Troll.](else-if: $class is "Elf Archer")[You manage to flee back to the tavern and enter it to lose the Troll.](else-if: $class is "Warrior")[You attempt to flee but the Troll out manuvers you due to your low Agility points. You now stand motionless, the troll now between you and the path to the tavern. You are contemplating your next move.]
+(if:$class is "Wizard")[[Go in Tavern]](else-if:$class is "Elf Archer")[[Go in Tavern]](else-if:$class is "Warrior")[[Attack]]
+[[Attempt to Barter]]
+
+
+:: Go in Tavern {"position":"725,275","size":"100,100"}
+You enter the tavern and are greeted by loud arguing in the back left corner and a low murmur throughout the rest of the tavern. Do you approach the bar or investigate the arguement in the corner?
+[[Aproach the bar]]
+[[Investigate the arguement]]
+
+
+:: Gold Bag {"position":"1575,25","size":"100,100"}
+You choose to offer your Bag of Gold up for barter. The troll stares blankly at you as though implying the dull looking bag means nothing to them. You return to your bag to try something else.
+[[Look in Bag]]
+
+
+:: Golden Chalice {"position":"1650,450","size":"100,100"}
+{(set: $haveGoldChalice to false)}You look into your bag and pull out a Gold Chalice. The troll appears enticed with this item. The troll takes it and allows you to continue down the road to the nearby village.
+[[To Village]]
+
+
+:: Investigate the arguement {"position":"875,400","size":"100,100"}
+You approach the corner. As you approach you over hear some of the conversation coming. They seem to be arguing about who they want their third member of the party to be and where they would ever find (if:$class is "Wizard")[a Wizard] (if:$class is "Warrior")[a Warrior] (if:$class is "Elf Archer")[an Elf Archer] in this part of the world.
+[[Decision]]
+
+
+:: Look in Bag {"position":"1475,200","size":"100,100"}
+(if: $class is "Warrior")[ [[Gold Bag]]
+[[Golden Chalice]]
+[[Carved Wooden Figure]] ](if: $class is "Wizard")[ [[Gold Bag]]
+[[Silver Necklace]]
+[[Carved Wooden Figure]] ](if: $class is "Elf Archer")[ [[Gold Bag]]
+[[Silver Tiara]]
+[[Carved Wooden Figure]] ]
+
+
+:: Polite introduction {"position":"900,625","size":"100,100"}
+\:: Polite introduction response
+(if: $class is "Wizard")[
+    "Ah, a scholar!" the robed woman says. "We could use your knowledge."
+]
+(else-if: $class is "Warrior")[
+    "A strong arm with manners? Rare. You’re welcome among us," the leader says.
+]
+(else-if: $class is "Elf Archer")[
+    "We were just discussing our need for a scout. You're in."
+]
+[[To Village]]
+
+
+
+:: Prepare for ambush {"position":"1350,1200","size":"100,100"}
+\:: Prepare for an ambush
+The group forms a circle.
+(if: $Cunning > 200)[
+    You predict the shadows' movements and coordinate a counter-attack.
+    [[Battle the shadows]]
+](else:)[
+    You brace for the worst.
+    [[Battle the shadows]]
+]
+
+
+
+:: Press on to the village {"position":"1100,1325","size":"100,100"}
+https://chatgpt.com/share/6818e00f-5950-8007-b12f-e5a73b97cf22
+
+
+:: Retreat to the group {"position":"1350,1075","size":"100,100"}
+\:: Retreat to the group
+You retreat just in time. A creature pounces where you stood.
+(if: $class is "Warrior")[ You intercept the creature, deflecting its attack. You and your companions form a united front.
+   [[Prepare for ambush]]
+](else-if: $class is "Elf Archer")[
+    You circle behind and fire two arrows into its back.
+    [[Search the area]]
+](else-if: $class is "Wizard")[
+    You join the others in a united front.
+    [[Prepare for ambush]]
+]
+
+
+
+:: Rude introduction {"position":"575,625","size":"100,100"}
+\:: Rude introduction response
+(if: $class is "Wizard")[
+    The group seems unimpressed by your magical robes and harsh tone.
+    "We already have a mage," one mutters. "But fine, if you can pull your weight."
+]
+(else-if: $class is "Warrior")[
+    Your intimidating stature gets a grudging nod. "Arrogant, but strong," they say. "We could use that."
+]
+(else-if: $class is "Elf Archer")[
+    They glance at your bow and sneer. "Fast fingers, slow brain?" one laughs. Still, they let you join.
+]
+[[To Village]]
+
+
+
+:: Search the area {"position":"1100,1200","size":"100,100"}
+\:: Search the area
+You find strange symbols carved into trees—warnings, perhaps.
+(if: $Cunning > 300)[
+    You recognize them as glyphs of warding. Someone tried to protect this place.
+]
+[[Press on to the village]]
+
+
+
+:: Select Character {"position":"125,200","size":"100,100"}
+Choose a character:
+
+[[Wizard]]
+[[Warrior]]
+[[Elf Archer]]
+
+
+:: Silver Necklace {"position":"1675,350","size":"100,100"}
+{(set: $haveSilverNecklace to false)}You look into your bag and pull out a Silver Necklace. The troll appears enticed with this item. The troll takes it and allows you to continue down the road to the nearby village.
+[[To Village]]
+
+
+:: Silver Tiara {"position":"1675,250","size":"100,100"}
+{(set: $haveSilverTiara to false)}You look into your bag and pull out a Silver Tiara. The troll appears enticed with this item. The troll takes it and allows you to continue down the road to the nearby village.
+[[To Village]]
+
+
+:: Stand your ground {"position":"1225,1075","size":"100,100"}
+\:: Stand your ground
+A beast lunges from the fog!
+(if: $strength > 250)[
+    You crush the creature with brute force.
+    [[Search the area]]
+](else-if: $agility > 100)[
+    You dodge gracefully and shoot it down.
+    [[Search the area]]
+](else:)[
+    It wounds you before the others arrive to help.
+    [[To Village]] (set: $wounded to true)
+]
+
+
+
+:: Start {"position":"125,50","size":"100,100"}
+Hello! Welcome to my simple fantasy adventure game. 
+Please click "Select Character" to Begin.
+[[Select Character]]
+
+
+:: Start Adventure {"position":"950,75","size":"100,100"}
+You begin your adventure outside a weathered tavern overgrown by vines. Do you choose to go in or to travel down the road to a nearby village?
+<img src="https://as1.ftcdn.net/v2/jpg/10/82/66/98/1000_F_1082669863_NaDDyxwqWlOSX2WqxjAc1bOuUvSLpGn3.jpg" width="400">
+[[Go in Tavern]]
+[[Travel down the road to the village]]
+
+
+:: To Village {"position":"1225,950","size":"100,100"}
+\:: Investigate the mist
+The mist thickens as you approach. You feel a magical pressure in the air.
+(if: $Cunning > 200)[
+    You sense an enchantment at play—something ancient and watchful.
+    [[Attempt to dispel magic]]
+](else:)[
+    You hear whispers, but can’t decipher them.
+    [[Stand your ground]]
+    [[Retreat to the group]]
+]
+
+
+
+:: Travel down the road to the village {"position":"1200,75","size":"100,100"}
+You travel down the road toward the nearby village. Part way there you are attacked by a large Troll. Do you attack, attempt to barter, or attempt to flee?
+<img src="https://as1.ftcdn.net/v2/jpg/09/89/19/80/1000_F_989198052_Pb4zvKoc4fbjd5j8IJ7T6lDN6XpAWkmG.jpg" width="400">
+[[Attack]]
+[[Attempt to Barter]]
+[[Flee]]
+
+
+:: Warrior {"position":"275,350","size":"100,100"}
+You become a strong battle hardened Warrior.
+{(set: $class to "Warrior")
+(set: $Health to 300)
+(set: $Strength to 250)
+(set: $Agility to 30)
+(set: $Cunning to 30)}
+Class is $class
+Health is $Health
+Strength is $Strength
+Agility is $Agility
+
+Starting Inventory:
+{(set: $haveGoldBag to true)}Bag of Gold
+{(set: $haveGoldChalice to true)}Golden Chalice
+{(set: $haveWoodFigure to true)}Carved wooden figure
+{<!--
+(if:$Strength > 30)[You can lift the boulder.]
+(else:)[You could not lift the boulder.]
+-->}
+<img src="https://as2.ftcdn.net/v2/jpg/07/17/96/13/1000_F_717961360_aQ0z7olU9dyxmeJis3hEmXclWzoSEvUd.jpg" width="400">
+[[Start Adventure]]
+
+{<!--add a very basic inventory to facilitate the troll bartering prompt-->}
+
+
+:: Wizard {"position":"225,525","size":"100,100"}
+You become a powerful Wizard
+{(set: $class to "Wizard")
+(set: $Health to 50)
+(set: $Strength to 20)
+(set: $Agility to 100)
+(set: $Cunning to 300)}
+Class is $class
+Health is $Health
+Strength is $Strength
+Agility is $Agility
+
+Starting Inventory:
+{(set: $haveGoldBag to true)}Bag of Gold
+{(set: $haveSilverNecklace to true)}Silver Necklace
+{(set: $haveWoodFigure to true)}Carved wooden figure
+{<!--
+(if:$Strength > 30)[You can lift the boulder.]
+(else:)[You could not lift the boulder.]
+-->}
+<img src="https://as1.ftcdn.net/v2/jpg/04/88/49/50/1000_F_488495072_qw53n2jWvKGarj3P2YAUi2smwk9aERFN.jpg" width="400">
+[[Start Adventure]]
