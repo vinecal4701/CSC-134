@@ -15,6 +15,7 @@ C++ Final Project Game
 :: Aproach the bar {"position":"575,400","size":"100,100"}
 You approach the bar and order a drink. While you are nursing your drink you over hear some of the conversation coming from the loud arguement in the corner. They seem to be arguing about who they want their third member of the party to be and where they would ever find (if:$class is "Wizard")[a Wizard] (else-if:$class is "Warrior")[a Warrior] (else-if:$class is "Elf Archer")[an Elf Archer]<!--(else:)[Undefined]--> in this part of the world.
 [[Decision]]
+<img src="https://media.istockphoto.com/id/2155884050/photo/3d-rendering-medieval-tavern.jpg?s=2048x2048&w=is&k=20&c=FzONmmD7wpjKZx7hAcmlVBXWvoNCDGjEpxxeN3p67eg=" width="800">
 
 
 :: Attack {"position":"1300,200","size":"100,100"}
@@ -44,7 +45,6 @@ You attempt to barter with the troll in an attempt to convince it to let you pas
 ]
 
 
-
 :: Battle the shadows {"position":"1350,1325","size":"100,100"}
 \:: Battle the shadows
 The shadow creatures leap from the trees.
@@ -56,7 +56,6 @@ The shadow creatures leap from the trees.
     You shoot faster than the eye can follow, dropping several before they reach you.
 ]
 [[Search the area]]
-
 
 
 :: Carved Wooden Figure {"position":"1675,125","size":"100,100"}
@@ -148,7 +147,6 @@ You approach the corner. As you approach you over hear some of the conversation 
 [[To Village]]
 
 
-
 :: Prepare for ambush {"position":"1350,1200","size":"100,100"}
 \:: Prepare for an ambush
 The group forms a circle.
@@ -161,9 +159,27 @@ The group forms a circle.
 ]
 
 
-
 :: Press on to the village {"position":"1100,1325","size":"100,100"}
+\:: Press on to the village
+You continue through the thinning mist. The village gate looms ahead.
+(if: $wounded is true)[
+    You limp, favoring your side, but press on.
+]
+Your party grows quiet, sensing that this was only the beginning.
+
+To be continued...
+
+
+
+:: Read.me {"position":"300,25","size":"100,100"}
+Story prompts begining with "::" were generated from the below listed prompt and discussion link with open.ai. I edited some of what it produced to shift some of the outcomes/ background code to follow more along the arc I was looking for and to mesh with the code/story I had written already.
+
 https://chatgpt.com/share/6818e00f-5950-8007-b12f-e5a73b97cf22
+
+I used open source images for all images provided thus far.
+
+
+I used state setting code along with if-else statements to provide various outcomes specific to the class chosen at the start of the game. I initially ran into some issues with code flow and story flow when setting up the barter system when dealing with the troll. I ended up creating an inventory system using state setting code attached to the players choice of character to provide a list of item options when the player selected the "Attempt to Barter" option. This takes them from the "Look in Bag" prompt to outcomes depending on if-else statements providing different outcomes. I used state setting code to remove the item given to the troll from the player's inventory.
 
 
 :: Retreat to the group {"position":"1350,1075","size":"100,100"}
@@ -178,7 +194,6 @@ You retreat just in time. A creature pounces where you stood.
     You join the others in a united front.
     [[Prepare for ambush]]
 ]
-
 
 
 :: Rude introduction {"position":"575,625","size":"100,100"}
@@ -196,7 +211,6 @@ You retreat just in time. A creature pounces where you stood.
 [[To Village]]
 
 
-
 :: Search the area {"position":"1100,1200","size":"100,100"}
 \:: Search the area
 You find strange symbols carved into trees—warnings, perhaps.
@@ -204,7 +218,6 @@ You find strange symbols carved into trees—warnings, perhaps.
     You recognize them as glyphs of warding. Someone tried to protect this place.
 ]
 [[Press on to the village]]
-
 
 
 :: Select Character {"position":"125,200","size":"100,100"}
@@ -239,12 +252,17 @@ A beast lunges from the fog!
     [[To Village]] (set: $wounded to true)
 ]
 
+<img src="https://as1.ftcdn.net/jpg/09/34/56/02/1000_F_934560215_jI63FzHDduSuoZB3DhTA2BjuefU7KFwv.jpg" width="800">
 
 
 :: Start {"position":"125,50","size":"100,100"}
 Hello! Welcome to my simple fantasy adventure game. 
 Please click "Select Character" to Begin.
 [[Select Character]]
+
+
+
+[[Read.me]]
 
 
 :: Start Adventure {"position":"950,75","size":"100,100"}
@@ -256,6 +274,9 @@ You begin your adventure outside a weathered tavern overgrown by vines. Do you c
 
 :: To Village {"position":"1225,950","size":"100,100"}
 \:: Investigate the mist
+
+<img src="https://raw.githubusercontent.com/vinecal4701/CSC-134/refs/heads/main/misty_dirt_road.jpg" width="400">
+
 The mist thickens as you approach. You feel a magical pressure in the air.
 (if: $Cunning > 200)[
     You sense an enchantment at play—something ancient and watchful.
@@ -265,7 +286,6 @@ The mist thickens as you approach. You feel a magical pressure in the air.
     [[Stand your ground]]
     [[Retreat to the group]]
 ]
-
 
 
 :: Travel down the road to the village {"position":"1200,75","size":"100,100"}
