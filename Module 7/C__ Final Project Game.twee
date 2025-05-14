@@ -19,12 +19,10 @@ You approach the bar and order a drink. While you are nursing your drink you ove
 
 
 :: Attack {"position":"1300,200","size":"100,100"}
-{(if:$class is "Wizard")[You attempt to attack the troll using your magical Fireball.] 
-(if:$class is "Warrior")[You attempt to attack the troll using your enchanted great sword.] 
-(if:$class is "Elf Archer")[You attempt to attack the troll using your flaming arrows.] }
-{(if:$class is "Wizard")[You attempt to fight the Troll but your magical attacks seem to be having no affect. You are forced to flee. [[Flee]] ] 
-(if:$class is "Warrior")[You attempt to fight the Troll but your strikes seem to be having no affect. You are forced to flee. [[Flee]] ] 
-(if:$class is "Elf Archer")[You attempt to fight the Troll but your arrows seem to be having no affect. You are forced to flee. [[Flee]] ]}
+{(if:$class is "Wizard")[You attempt to attack the troll using your magical Fireball but your magical attacks seem to be having no affect. You are forced to flee.
+[[Flee]] ](if:$class is "Warrior")[You attempt to attack the troll using your enchanted great sword but your strikes seem to be having no affect. You are forced to flee.
+[[Flee]] ](if:$class is "Elf Archer")[You attempt to attack the troll using your flaming arrows but your arrows seem to be having no affect. You are forced to flee.
+[[Flee]] ]}
 
 
 :: Attempt to Barter {"position":"1375,75","size":"100,100"}
@@ -39,9 +37,6 @@ You attempt to barter with the troll in an attempt to convince it to let you pas
 (if: $class is "Wizard")[
     You channel your arcane energy and unravel the enchantment. The mist clears in a flash.
     [[Search the area]]
-](else:)[
-    You try, but the spell resists you.
-    [[Retreat to the group]]
 ]
 
 
@@ -98,8 +93,8 @@ Starting Inventory:
 
 :: Flee {"position":"1150,200","size":"100,100"}
 (if: $class is "Wizard" )[You manage to flee back to the tavern and enter it to lose the Troll.](else-if: $class is "Elf Archer")[You manage to flee back to the tavern and enter it to lose the Troll.](else-if: $class is "Warrior")[You attempt to flee but the Troll out manuvers you due to your low Agility points. You now stand motionless, the troll now between you and the path to the tavern. You are contemplating your next move.]
-(if:$class is "Wizard")[[Go in Tavern]](else-if:$class is "Elf Archer")[[Go in Tavern]](else-if:$class is "Warrior")[[Attack]]
-[[Attempt to Barter]]
+(if:$class is "Wizard")[ [[Go in Tavern]] ](else-if:$class is "Elf Archer")[[Go in Tavern]](else-if:$class is "Warrior")[ [[Attack]] 
+[[Attempt to Barter]] ]
 
 
 :: Go in Tavern {"position":"725,275","size":"100,100"}
@@ -150,7 +145,7 @@ You approach the corner. As you approach you over hear some of the conversation 
 :: Prepare for ambush {"position":"1350,1200","size":"100,100"}
 \:: Prepare for an ambush
 The group forms a circle.
-(if: $Cunning > 200)[
+(if: $class is "Wizard" )[
     You predict the shadows' movements and coordinate a counter-attack.
     [[Battle the shadows]]
 ](else:)[
@@ -170,7 +165,6 @@ Your party grows quiet, sensing that this was only the beginning.
 To be continued...
 
 
-
 :: Read.me {"position":"300,25","size":"100,100"}
 Story prompts begining with "::" were generated from the below listed prompt and discussion link with open.ai. I edited some of what it produced to shift some of the outcomes/ background code to follow more along the arc I was looking for and to mesh with the code/story I had written already.
 
@@ -184,14 +178,13 @@ I used state setting code along with if-else statements to provide various outco
 
 :: Retreat to the group {"position":"1350,1075","size":"100,100"}
 \:: Retreat to the group
-You retreat just in time. A creature pounces where you stood.
-(if: $class is "Warrior")[ You intercept the creature, deflecting its attack. You and your companions form a united front.
+
+(if: $class is "Warrior")[ A beast lunges from the fog as you attempt to retreat! You intercept the creature, deflecting its attack. The beast retreats to the fog and you and your companions form a united front.
    [[Prepare for ambush]]
 ](else-if: $class is "Elf Archer")[
-    You circle behind and fire two arrows into its back.
-    [[Search the area]]
-](else-if: $class is "Wizard")[
-    You join the others in a united front.
+    A beast lunges from the fog as you attempt to retreat! You circle behind and fire two arrows into its back. The Beast retreats into the fog and you and your companions form a united front.
+    [[Prepare for ambush]]
+](else-if: $class is "Wizard")[You retreat just in time. A creature pounces where you stood. You join the others in a united front.
     [[Prepare for ambush]]
 ]
 
@@ -214,9 +207,7 @@ You retreat just in time. A creature pounces where you stood.
 :: Search the area {"position":"1100,1200","size":"100,100"}
 \:: Search the area
 You find strange symbols carved into trees—warnings, perhaps.
-(if: $Cunning > 300)[
-    You recognize them as glyphs of warding. Someone tried to protect this place.
-]
+(if: $class is "Wizard" )[You recognize them as glyphs of warding. Someone tried to protect this place.]
 [[Press on to the village]]
 
 
@@ -241,13 +232,9 @@ Choose a character:
 :: Stand your ground {"position":"1225,1075","size":"100,100"}
 \:: Stand your ground
 A beast lunges from the fog!
-(if: $strength > 250)[
-    You crush the creature with brute force.
-    [[Search the area]]
-](else-if: $agility > 100)[
-    You dodge gracefully and shoot it down.
-    [[Search the area]]
-](else:)[
+(if: $class is "Warrior")[You crush the creature with brute force.
+    [[Search the area]] ](else-if: $class is "Elf Archer")[You dodge gracefully and shoot it down.
+    [[Search the area]] ](else-if: $class is "Wizard" )[
     It wounds you before the others arrive to help.
     [[To Village]] (set: $wounded to true)
 ]
